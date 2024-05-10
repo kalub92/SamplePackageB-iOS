@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SamplePackageB-iOS",
+    platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -12,12 +13,12 @@ let package = Package(
             targets: ["SamplePackageB-iOS"]
         ),
         .library(
-            name: "3rdPartyResources",
-            targets: ["3rdPartyResources"]
+            name: "ThirdPartyResources",
+            targets: ["ThirdPartyResources"]
         ),
         .library(
-            name: "3rdPartyAdapter",
-            targets: ["3rdPartyAdapter"]
+            name: "ThirdPartyAdapter",
+            targets: ["ThirdPartyAdapter"]
         )
     ],
     targets: [
@@ -33,10 +34,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "3rdPartyAdapter",
+            name: "ThirdPartyAdapter",
             dependencies: [
                 "SamplePackageB-iOS",
-                "3rdPartyResources"
+                "ThirdPartyResources"
             ],
             linkerSettings: [
                 .linkedFramework("AuthenticationServices"),
@@ -45,7 +46,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "3rdPartyResources",
+            name: "ThirdPartyResources",
             dependencies: [
                 .target(
                     name: "OneSignal",
@@ -64,28 +65,27 @@ let package = Package(
                     condition: .when(platforms: [.iOS])
                 )
             ],
-            resources: [
-                .copy("Resources/3pa.sdk.bundle"),
-            ]
-        ),
-        .binaryTarget(
-            name: "OneSignal",
-            path: "Frameworks/OneSignal.xcframework"
-        ),
-        .binaryTarget(
-            name: "OneSignalCore",
-            path: "Frameworks/OneSignalCore.xcframework"
-        ),
-        .binaryTarget(
-            name: "OneSignalExtension",
-            path: "Frameworks/OneSignalExtension.xcframework"
-        ),
-        .binaryTarget(
-            name: "OneSignalOutcomes",
-            path: "Frameworks/OneSignalOutcomes.xcframework"
+            resources: [.copy("Resources/3pa.sdk.bundle")]
         ),
         .testTarget(
             name: "SamplePackageBTests",
-            dependencies: ["SamplePackageB-iOS"]),
+            dependencies: ["SamplePackageB-iOS"]
+        ),
+        .binaryTarget(
+            name: "OneSignal",
+            path: "Frameworks/ThirdPartyVendor/iOS/OneSignal.xcframework"
+        ),
+        .binaryTarget(
+            name: "OneSignalCore",
+            path: "Frameworks/ThirdPartyVendor/iOS/OneSignalCore.xcframework"
+        ),
+        .binaryTarget(
+            name: "OneSignalExtension",
+            path: "Frameworks/ThirdPartyVendor/iOS/OneSignalExtension.xcframework"
+        ),
+        .binaryTarget(
+            name: "OneSignalOutcomes",
+            path: "Frameworks/ThirdPartyVendor/iOS/OneSignalOutcomes.xcframework"
+        )
     ]
 )

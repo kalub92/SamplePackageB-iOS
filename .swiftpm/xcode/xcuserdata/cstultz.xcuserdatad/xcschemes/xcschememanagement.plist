@@ -7,12 +7,12 @@
 		<key>3rdPartyAdapter.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
 		<key>3rdPartyResources.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>5</integer>
 		</dict>
 		<key>SamplePackageB-Package.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,17 +22,27 @@
 		<key>SamplePackageB-iOS-Package.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SamplePackageB-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SamplePackageB.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>ThirdPartyAdapter.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ThirdPartyResources.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -58,6 +68,16 @@
 			<true/>
 		</dict>
 		<key>SamplePackageBTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ThirdPartyAdapter</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ThirdPartyResources</key>
 		<dict>
 			<key>primary</key>
 			<true/>
