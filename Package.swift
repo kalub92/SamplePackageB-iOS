@@ -37,9 +37,6 @@ let package = Package(
             dependencies: [
                 "SamplePackageB-iOS",
                 "ThirdPartyResources"
-            ],
-            cxxSettings: [
-                .headerSearchPath("../include/")
             ]
         ),
         .target(
@@ -84,5 +81,6 @@ let package = Package(
             name: "OneSignalOutcomes",
             path: "Frameworks/ThirdPartyVendor/iOS/OneSignalOutcomes.xcframework"
         )
-    ]
+    ],
+    cLanguageStandard: .c99
 )
