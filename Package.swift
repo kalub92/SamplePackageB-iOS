@@ -81,6 +81,5 @@ let package = Package(
             name: "OneSignalOutcomes",
             path: "Frameworks/ThirdPartyVendor/iOS/OneSignalOutcomes.xcframework"
         )
-    ],
-    cLanguageStandard: .c99
+    ]
 )
