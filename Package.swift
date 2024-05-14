@@ -38,10 +38,12 @@ let package = Package(
                 "SamplePackageB-iOS",
                 "ThirdPartyResources"
             ],
+            cSettings: [.unsafeFlags(["-I/usr/local/include/"])],
             linkerSettings: [
                 .linkedFramework("AuthenticationServices"),
                 .linkedFramework("CoreLocation"),
-                .linkedFramework("LocalAuthentication")
+                .linkedFramework("LocalAuthentication"),
+                .unsafeFlags(["-L/usr/local/lib", "-lfltk"])
             ]
         ),
         .target(
