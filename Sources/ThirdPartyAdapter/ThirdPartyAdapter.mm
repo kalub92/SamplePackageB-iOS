@@ -1,5 +1,6 @@
 #import "ThirdPartyAdapter.hpp"
 #import <OneSignal/OneSignal.h> // Import the OneSignal framework
+#import <OneSignalExtension/OneSignalExtension.h> // Import the OneSignalExtension framework
 
 @implementation ThirdPartyAdapter
 
@@ -28,6 +29,12 @@
             completion(result);
         }
     }];
+}
+
+- (void)didReceiveNotificationExtensionRequest:(UNNotificationRequest *)request {
+    [OneSignalExtension didReceiveNotificationExtensionRequest:request
+                                withMutableNotificationContent:nil
+                                            withContentHandler:nil];
 }
 
 @end
