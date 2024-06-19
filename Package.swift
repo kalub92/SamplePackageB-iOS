@@ -33,7 +33,8 @@ let package = Package(
                 .target(name: "dumb", condition: .when(platforms: [.iOS])),
                 .target(name: "lame", condition: .when(platforms: [.iOS])),
                 .target(name: "opus", condition: .when(platforms: [.iOS])),
-                .target(name: "tta++", condition: .when(platforms: [.iOS]))
+                .target(name: "tta++", condition: .when(platforms: [.iOS])),
+                .target(name: "ogg", condition: .when(platforms: [.iOS]))
             ]
         ),
         .target(
@@ -78,6 +79,10 @@ let package = Package(
                     name: "tta++",
                     condition: .when(platforms: [.iOS])
                 ),
+                .target(
+                    name: "ogg",
+                    condition: .when(platforms: [.iOS])
+                )
             ],
             resources: [.copy("Resources/3pa.sdk.bundle")]
         ),
@@ -117,5 +122,9 @@ let package = Package(
             name: "tta++",
             path: "Frameworks/ThirdPartyVendor/iOS/tta++.xcframework"
         ),
+        .binaryTarget(
+            name: "ogg",
+            path: "Frameworks/ThirdPartyVendor/iOS/ogg.xcframework"
+        )
     ]
 )
