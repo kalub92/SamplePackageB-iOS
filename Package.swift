@@ -31,7 +31,6 @@ let package = Package(
                 .target(name: "OneSignalExtension", condition: .when(platforms: [.iOS])),
                 .target(name: "OneSignalOutcomes", condition: .when(platforms: [.iOS])),
                 .target(name: "dumb", condition: .when(platforms: [.iOS])),
-                .target(name: "lame", condition: .when(platforms: [.iOS])),
                 .target(name: "opus", condition: .when(platforms: [.iOS])),
                 .target(name: "tta++", condition: .when(platforms: [.iOS])),
                 .target(name: "ogg", condition: .when(platforms: [.iOS]))
@@ -65,10 +64,6 @@ let package = Package(
                 ),
                 .target(
                     name: "dumb",
-                    condition: .when(platforms: [.iOS])
-                ),
-                .target(
-                    name: "lame",
                     condition: .when(platforms: [.iOS])
                 ),
                 .target(
@@ -109,10 +104,6 @@ let package = Package(
         .binaryTarget(
             name: "dumb",
             path: "Frameworks/ThirdPartyVendor/iOS/dumb.xcframework"
-        ),
-        .binaryTarget(
-            name: "lame",
-            path: "Frameworks/ThirdPartyVendor/iOS/lame.xcframework"
         ),
         .binaryTarget(
             name: "opus",
